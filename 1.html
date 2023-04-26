@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // const person = {name:"xzk"}
@@ -52,7 +54,7 @@
         // const number=[1,2,3]
         // const [y]=number
         // console.log(y)
-        
+
         // const p1 =Promise.resolve('first')
         // const p2 =Promise.resolve('2')
         // const p3 =Promise.reject('3')
@@ -66,15 +68,15 @@
 
         // const a=['0','1','2','3'].map(parseInt)
         // console.log(a);
-        function chengnian(age){
-            if(age>18){
-                const message="chengnian"
-            }else if(age<18){
-                const message="weichengnian"
-            }
-            return message
-        }
-        console.log(chengnian(19));
+        // function chengnian(age){
+        //     if(age>18){
+        //         const message="chengnian"
+        //     }else if(age<18){
+        //         const message="weichengnian"
+        //     }
+        //     return message
+        // }
+        // console.log(chengnian(19));
 
 
 
@@ -82,17 +84,57 @@
 
 
 
-        
-        var name='xzk',age=20;
-        var obj={
-            myFun:function(){
-                console.log(this.name+"  "+this.age)
-            }
-        }
-        obj.myFun()//undefined undefined
-        obj.myFun.call()//xzk 20
-        obj.myFun.bind()() //xzk 20  bind返回的是一个函数
-        obj.myFun.apply() //xzk 20
+
+        // var name='xzk',age=20;
+        // var obj={
+        //     myFun:function(){
+        //         console.log(this.name+"  "+this.age)
+        //     }
+        // }
+        // obj.myFun()//undefined undefined
+        // obj.myFun.call()//xzk 20
+        // obj.myFun.bind()() //xzk 20  bind返回的是一个函数
+        // obj.myFun.apply() //xzk 20
+
+
+        // let arrs = new Array(10000000);
+
+        // console.time('for');
+        // // for (let i = 0; i < arrs.length; i++) {
+
+        // // };
+        // for (let i = 0, len = arrs.length; i < len; i++) {
+
+        // };
+        // console.timeEnd('for');
+
+        // console.time('forEach');
+
+        // arrs.forEach((arr) => {
+
+        // });
+        // console.timeEnd('forEach');
+
+
+        // example 1
+        var a = {}, b = '123', c = 123;
+        a[b] = 'b';
+        a[c] = 'c';
+        console.log(a[b]);
+
+        // example 2
+        var a = {}, b = Symbol('123'), c = Symbol('123');
+        a[b] = 'b';
+        a[c] = 'c';
+        console.log(a[b]);
+
+
+        // example 3
+        var a = {}, b = { key: '123' }, c = { key: '456' };
+        a[b] = 'b';
+        a[c] = 'c';
+        console.log(a[b]);
     </script>
 </body>
+
 </html>
