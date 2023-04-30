@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Foo(){
+        //     getName = function(){alert (1);};
+        //     return this;
+        // }
+        // Foo.getName = function(){alert(2);};
+        // Foo.prototype.getName = function(){alert(3);};
+        // var getName =  function(){alert(4);};
+        // function getName(){alert(5);};
+        // 第一步
+        function Foo(){
+            getName = function(){alert (1);};
+            return this;
+        }
+        // 第二步 函数提升优于变量提升  var getName被忽略
+        // function getName(){alert(5)}  后续被覆盖
+        var getName //被忽略
+        // 第三步
+        Foo.getName = function(){alert(2);};
+        Foo.prototype.getName = function(){alert(3);};
+        // 第四步  getName 覆盖 原本的getName
+        getName =  function(){alert(4);};   
+
+
+
+        Foo.getName();  //2
+        getName()       //4
+        //相当于 (Foo()).getName() =>重新定义getName = function(){alert (1);}; =>  this.getName()
+        Foo().getName();  //1
+        getName();     //1
+        // 相当于 new (Foo.getName()) => new(function(){alert(2);})
+        new Foo.getName(); //2
+        //相当于 (new Foo()).getName() =》实例对象不是Foo() => foo.getName();
+        new Foo().getName(); //3
+        // 相当于 new ((new Foo()).getName)() =>new function(){alert(3);}()
+        new new Foo().getName();//3
+
+    </script>
+</body>
+</html>

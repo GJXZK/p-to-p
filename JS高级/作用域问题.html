@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var num1 = 55;
+        // var num2 = 66;
+        // function f1(num,num1){
+        //     num = 100;
+        //     num1 = 100;
+        //     num2 = 100;  //变量提升
+        //     console.log(num1);  //100
+        //     console.log(num2);  //100
+        //     console.log(num);   //100               
+        // }
+        // f1(num1,num2);
+        // console.log(num1);
+        // console.log(num2);
+        // console.log(num);
+
+        // 值类型和引用类型
+        // function Person(name,age){
+        //     this.name=name;
+        //     this.age=age;
+        // }
+        // function f1(person){
+        //     person.name='ls'
+        //     person = new Person('aa',19)
+        // }
+        // var p=new Person('zz',18)
+        // f1(p)
+        // console.log(p.name);
+
+        // 将get-element-by-id 转化为 getElementById
+        // var str = 'get-element-by-id'
+        // function upSpecialWord(str){
+        //     let a=str.split('-')
+        //     for(let i=0;i<a.length;i++){
+        //         a[i]=a[i].charAt(0).toUpperCase()+a[i].substr(1,a[i].length-1)
+        //     }
+        //     console.log(a);
+        // }
+        // upSpecialWord(str)
+        var arr = [1,2,3,4,5,6,7]
+        function sortArr(arr){
+            for(let i=0;i<arr.length-1;i++){
+                for(let j = 0 ;j<arr.length-1-i;j++){
+                    if(arr[j]<arr[j+1]){
+                        var b=arr[j]
+                        arr[j]=arr[j+1]
+                        arr[j+1]=b
+                    }
+                }
+            }
+            console.log(arr);
+        }
+        sortArr(arr)
+        function revire(arr){
+            for(let i=0;i<arr.length/2;i++){
+                let b=arr[i]
+                arr[i]=arr[arr.length-i-1]
+                arr[arr.length-i-1]=b
+            }
+            console.log(arr);
+        }
+        revire(arr)
+        // 去重
+        var arr2 = [8,11,20,5,20,8,0,2,4,9,0,8]
+        var narr2 = []
+        narr2[0]=arr2[0]
+        for(let i=1;i<arr2.length;i++){
+            for(let j=0;j<narr2.length;j++){
+                if(arr2[i] == narr2[j]){
+                    break;
+                }
+                if(j == narr2.length-1){
+                    narr2.push(arr2[i])
+                }
+            }
+        }
+        console.log(narr2);
+    </script>
+</body>
+</html>
