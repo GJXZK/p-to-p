@@ -23,6 +23,7 @@
         }
         // 第二步 函数提升优于变量提升  var getName被忽略
         // function getName(){alert(5)}  后续被覆盖
+        // var 声明提升 函数整体提升
         var getName //被忽略
         // 第三步
         Foo.getName = function(){alert(2);};
