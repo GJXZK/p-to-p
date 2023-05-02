@@ -13,7 +13,8 @@ fun(); //fun
 function fun(){
     console.log('fun');
 }
-
+console.time(fun);
+console.timeEnd(fun)
 // 执行上下文 执行上下文对象
 /*
     EC（执行上下文execute context）
